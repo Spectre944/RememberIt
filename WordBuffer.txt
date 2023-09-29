@@ -1,0 +1,7 @@
+WordBuffer
+write
+Undo
+open
+saveBufferToVocab
+# Определите сигнал, который будет использоваться для взаимодействия с QML
+    saveBufferToVocab = Signal()

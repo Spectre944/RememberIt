@@ -1,0 +1,3 @@
+{
+    "files": ["WordManager.py","FileManager.py","main.py","main.qml","NotificationWindow.qml","assets/qml/main.qml","classes/FileManager.py","classes/WordManager.py"]
+}
