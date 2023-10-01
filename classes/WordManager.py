@@ -1,15 +1,19 @@
 # This Python file uses the following encoding: utf-8
+from PySide6 import QtCore
+from PySide6.QtCore import QObject, Signal
 
 import win32clipboard
 import keyboard
 import threading
 
+
 # ##-----------------------------------------------------------------------## #
 
 
 # ##-----------------------------------------------------------------------## #
-class WordManagerClass():
+class WordManagerClass(QtCore.QObject):
     def __init__(self):
+        super().__init__()
 
         self.data = ""
         self.clipboard_data = ""
@@ -17,15 +21,17 @@ class WordManagerClass():
         self.counter = 0
         self.saved = False
 
-        # Регистрация обработчика для Ctrl + C
+        # Register Ctrl + C - copy word to buffer
         keyboard.add_hotkey('ctrl+c', self.hotKeySaveWord)
-        # Регистрация обработчика для Ctrl + Z
+        # Register Ctrl + Z - delete last added word
         keyboard.add_hotkey('ctrl+z', self.hotKeyUndoWord)
 
-        # Создаем и запускаем отдельный поток
+        # Creating separate thread
         keyboard_thread = threading.Thread(target=self.start_keyboard_listener)
-        keyboard_thread.daemon = True  # Поток будет завершен при завершении основного потока
+        keyboard_thread.daemon = True  # End of thread after main thread
         keyboard_thread.start()
+
+    textSaveUndoSlot = Signal(str)
 
 
     def getClipboard(self):
@@ -49,25 +55,25 @@ class WordManagerClass():
                 self.save_to_file(self.data)
                 self.saved = True
                 self.counter = 0
+                self.textSaveUndoSlot.emit(self.data)
             else:
                 self.counter = 0
 
         win32clipboard.CloseClipboard()
 
 
-    # Функция для запуска keyboard.wait() в отдельном потоке
+    # Keybord listener in separete Thread
     def start_keyboard_listener(self):
         print("Hotkey thread started")
         keyboard.wait()
 
     def save_to_file(self, text):
-            # Здесь вы можете добавить код для записи текста в файл
             with open("WordBuffer.txt", "a") as file:
                 file.write(text + "\n")
                 self.counter = 0
 
     def hotKeyUndoWord(self):
-        if (self.saved == True):
+        if (self.saved is True):
 
             input_file_path = "WordBuffer.txt"
             with open(input_file_path, "r") as file:

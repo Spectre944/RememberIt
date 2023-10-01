@@ -1,59 +1,79 @@
 import QtQuick
 import QtQuick.Controls
 
-Item {
+Window {
+    id: notificationWindow
     visible: true
-    anchors.horizontalCenter: parent
+    x: 500
     y: 100
+    width: 300
+    height: 100
+    flags: Qt.WindowStaysOnTopHint
 
-    width: 250
-    height: 50
-
-    Rectangle {
-        id: background
-        anchors.fill: parent
-        color: "#00000000"
+    Item {
+        height: parent.height
+        width: parent.width
 
         Rectangle {
-             id: content
-             anchors.fill: parent
-             anchors.margins: 10
-             radius: 10
-             color: "lightgray"
+            id: background
+            anchors.fill: parent
+            color: "#00000000"
 
-            Image {
-                id: imgAccepted
-                height: parent.height
-                width: 50
+            Rectangle {
+                id: content
+                anchors.fill: parent
+                anchors.margins: 10
+                radius: 10
+                color: "lightgray"
+
+                Image {
+                    id: imgAccepted
+                    height: parent.height
+                    width: 50
+
+                }
+
+                Text {
+                    id: lableText
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    anchors.left: imgAccepted.right
+                    anchors.right: undoButton.left
+                    anchors.top: parent.top
+                    anchors.bottom: parent.bottom
+                    anchors.margins: 0
+                    text: "Word saved"
+                }
+
+                Button {
+                    id: undoButton
+                    width: 50
+                    text: "Undo"
+                    anchors.right: parent.right
+                    anchors.top: parent.top
+                    anchors.bottom: parent.bottom
+                    anchors.margins: 0
+
+                }
 
             }
-
-            Text {
-                 id: lableText
-                 horizontalAlignment: Text.AlignHCenter
-                 verticalAlignment: Text.AlignVCenter
-                 anchors.left: imgAccepted.right
-                 anchors.right: undoButton.left
-                 anchors.top: parent.top
-                 anchors.bottom: parent.bottom
-                 anchors.margins: 0
-                 text: "Word saved"
-            }
-
-            Button {
-                id: undoButton
-                width: 50
-                text: "Undo"
-                anchors.right: parent.right
-                anchors.top: parent.top
-                anchors.bottom: parent.bottom
-                anchors.margins: 0
-
-            }
-
         }
+
+        Connections {
+            target: wordManagerContext
+
+            function onTextSaveUndoSlot(str){
+                notificationWindow.visible = true
+                lableText.text = str
+                console.log(str)
+
+            }
+        }
+
+
+
     }
 
-
-
 }
+
+

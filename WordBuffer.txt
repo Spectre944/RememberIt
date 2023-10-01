@@ -1,7 +1,28 @@
-WordBuffer
-write
-Undo
-open
-saveBufferToVocab
-# Определите сигнал, который будет использоваться для взаимодействия с QML
-    saveBufferToVocab = Signal()
+assessments 
+Increasingly
+Notwithstanding 
+considerations 
+evaluation
+Connections
+Connections
+margins
+Connections
+if
+class
+getClipboard
+controllPage
+WindowStaysOnTopHint
+Hello
+width
+Window
+Rectangle
+false
+anchors
+controllPage
+visible
+notificationWindow
+horizontalCenter
+00000000
+:/
+notificationWindow
+color

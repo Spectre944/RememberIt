@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 7.0.2, 2023-09-29T23:44:23. -->
+<!-- Written by QtCreator 7.0.2, 2023-10-01T00:49:44. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -136,18 +136,36 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">D:/Projects/Qt/QML_Apps/RememberIt/WordManager.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/Projects/Qt/QML_Apps/RememberIt/WordManager.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Projects/Qt/QML_Apps/RememberIt/WordManager.py</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{b1f24915-f6d9-4c35-949c-ff526a38ae2e}</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\Projects\Qt\QML_Apps\RememberIt\WordManager.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">D:/Projects/Qt/QML_Apps/RememberIt/classes/FileManager.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/Projects/Qt/QML_Apps/RememberIt/classes/FileManager.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Projects/Qt/QML_Apps/RememberIt/classes/FileManager.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{3056d736-0d99-4098-97aa-fb17d4e8d598}</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\Projects\Qt\QML_Apps\RememberIt\classes\FileManager.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/Projects/Qt/QML_Apps/RememberIt</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/Projects/Qt/QML_Apps/RememberIt/classes</value>
    </valuemap>
-   <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">2</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.2">
+    <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
+    <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
+    <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
+    <valuelist type="QVariantList" key="CustomOutputParsers"/>
+    <value type="int" key="PE.EnvironmentAspect.Base">2</value>
+    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">D:/Projects/Qt/QML_Apps/RememberIt/classes/WordManager.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/Projects/Qt/QML_Apps/RememberIt/classes/WordManager.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Projects/Qt/QML_Apps/RememberIt/classes/WordManager.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{0d480922-ae5c-4213-8778-e4960a0b38b4}</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\Projects\Qt\QML_Apps\RememberIt\classes\WordManager.py</value>
+    <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
+    <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
+    <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
+    <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/Projects/Qt/QML_Apps/RememberIt/classes</value>
+   </valuemap>
+   <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">3</value>
   </valuemap>
  </data>
  <data>
