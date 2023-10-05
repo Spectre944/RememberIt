@@ -1,19 +1,58 @@
-import QtQuick
-import QtQuick.Window
-import QtQuick.Controls
+import QtQuick 2.15
+import QtQuick.Window 2.15
+import QtQuick.Controls 2.15
 
 import "windows"
 
-Window {
+ApplicationWindow {
     width: 640
     height: 480
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("Vocabulary")
+
+    menuBar: MenuBar {
+            Menu {
+                title: qsTr("&File")
+                Action {
+                    text: qsTr("Update word buffer");
+                    onTriggered: {
+                        fileManagerContext.updateBufferSignal()
+                    }
+                }
+                Action {
+                    text: qsTr("Save buffer to vocabulary");
+                    onTriggered: {
+                        fileManagerContext.saveBufferVocabSignal(textAreaBuffer.text, textAreaTranslate.text)
+                    }
+                }
+                Action {
+                    text: qsTr("Merge all vocabulary to one");
+                    onTriggered: {
+                        fileManagerContext.mergeBackupFilesToVocaburarySignal()
+                        textAreaTranslate.clear()
+                        textAreaBuffer.clear()
+                    }
+                }
+            }
+
+            Menu {
+                title: qsTr("&View")
+                Action { text: qsTr("---") }
+
+            }
+            Menu {
+                title: qsTr("&Help")
+                Action { text: qsTr("&About") }
+            }
+
+        }
 
     NotificationWindow {
         id: notification
         visible: false
     }
+
+
 
     Page {
         id: controllPage
@@ -47,7 +86,7 @@ Window {
                         TextArea {
                             id: textAreaBuffer
                             anchors.fill: parent
-                            placeholderText: qsTr("Text Area")
+                            placeholderText: qsTr("Saved words by user")
                         }
                     }
                 }
@@ -67,31 +106,8 @@ Window {
 
                         TextArea {
                             id: textAreaTranslate
-                            placeholderText: qsTr("Text Area")
+                            placeholderText: qsTr("Translation of buffer place here")
                         }
-                    }
-                }
-
-                Button {
-                    id: buttonSaveBufferToVocab
-                    x: 543
-                    y: 10
-                    text: qsTr("Save buffer")
-                    onClicked: {
-                        fileManagerContext.saveBufferVocabSignal(textAreaBuffer.text, textAreaTranslate.text)
-                    }
-                }
-
-                Button {
-                    id: buttonLoadBuffer
-                    x: 530
-                    y: 34
-                    width: 80
-                    height: 28
-                    text: qsTr("Load buffer")
-
-                    onClicked: {
-                        fileManagerContext.updateBufferSignal()
                     }
                 }
 

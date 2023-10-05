@@ -10,6 +10,8 @@ Window {
     height: 100
     flags: Qt.WindowStaysOnTopHint
 
+
+
     Item {
         height: parent.height
         width: parent.width

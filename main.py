@@ -22,7 +22,7 @@ if __name__ == "__main__":
     app = QGuiApplication(sys.argv)
     engine = QQmlApplicationEngine()
 
-    # Добавьте экземпляр FileManager в контекст QML
+    # Add connections to QML
     engine.rootContext().setContextProperty("fileManagerContext", fm)
     engine.rootContext().setContextProperty("wordManagerContext", wm)
 

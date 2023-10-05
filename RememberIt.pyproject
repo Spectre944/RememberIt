@@ -1,3 +1,3 @@
 {
-    "files": ["main.py","classes/FileManager.py","assets/qml/main.qml","NotificationWindow.qml","FileManager.py","WordManager.py","classes/WordManager.py","main.qml","assets/qml/windows/NotificationWindow.qml"]
+    "files": ["main.py","assets/qml/windows/NotificationWindow.qml","WordManager.py","FileManager.py","main.qml","NotificationWindow.qml","classes/WordManager.py","classes/FileManager.py","assets/qml/main.qml","assets/qml/components/SceButton.qml"]
 }
