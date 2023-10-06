@@ -43,11 +43,11 @@ class FileManagerClass(QtCore.QObject):
         output_file = f"Vocaburary_{current_date}.txt"
 
         # Create a backup folder if it doesn't exist
-        if not os.path.exists(self.backup_folde):
-            os.makedirs(self.backup_folde)
+        if not os.path.exists(self.backup_folder):
+            os.makedirs(self.backup_folder)
 
         # Save new strings to the backup folder
-        backup_path = os.path.join(self.backup_folde, output_file)
+        backup_path = os.path.join(self.backup_folder, output_file)
         with open(backup_path, "w", encoding="utf-8") as file:
             file.write("\n".join(new_lines))
 

@@ -1,7 +1,41 @@
-assessments     - оценки
-Increasingly    - Все чаще
-Notwithstanding - Несмотря на
-considerations  - соображения
-evaluation      - оценка
-margins         - поля
-Connections     - Соединения
+abnormal     - аномальный
+abuse        - злоупотреблять
+acceptance   - принятие
+acclaimed    - признанный
+accomplish   - выполнить
+accordance   - соответствие
+accusation   - обвинение
+accustomed   - привыкший
+acknowledge  - сознавать
+acquaintance - знакомство
+affluent     - богатый
+affordable   - доступный
+agenda       - повестка дня
+aid          - помогать
+allegation   - обвинение
+alleged      - предполагаемый
+allowance    - разрешение
+alongside    - рядом
+alteration   - внесение изменений
+alternate    - альтернативный
+amateur      - любитель
+amendment    - поправка
+amid         - на фоне
+ample        - обильный
+anticipate   - предвидеть
+anyhow       - в любом случае
+apparent     - очевидный
+appeal       - обращаться
+appliance    - приспособление
+appoint      - назначать
+arise        - возникать
+assert       - утверждать
+asset        - объект
+assign       - назначать
+assignment   - назначение
+assurance    - гарантия
+attain       - достичь
+attendance   - посещаемость
+audition     - прослушивание
+authentic    - аутентичный
+avenue       - проспект
