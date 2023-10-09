@@ -22,15 +22,15 @@ ApplicationWindow {
             Action {
                 text: qsTr("Save buffer to vocabulary");
                 onTriggered: {
-                    fileManagerContext.saveBufferVocabSignal(textAreaBuffer.text, textAreaTranslate.text)
+                    fileManagerContext.saveBufferVocabSignal(wordPage.textAreaBufferAlias.text, wordPage.textAreaTranslateAlias.text)
                 }
             }
             Action {
                 text: qsTr("Merge all vocabulary to one");
                 onTriggered: {
                     fileManagerContext.mergeBackupFilesToVocaburarySignal()
-                    textAreaTranslate.clear()
-                    textAreaBuffer.clear()
+                    wordPage.textAreaTranslateAlias.clear()
+                    wordPage.textAreaBufferAlias.clear()
                 }
             }
         }
@@ -61,143 +61,30 @@ ApplicationWindow {
         visible: false
     }
 
-
-
-    Page {
-        id: controllPage
+    SwipeView {
+        id: pageView
         anchors.fill: parent
+        currentIndex: 0
 
-        Rectangle {
-            id: background
-            anchors.fill: parent
-            color: "white"
-
-            Rectangle {
-                id: content
-                anchors.fill: parent
-                anchors.margins: 10
-                color: "lightgray"
-                radius: 10
-
-                Rectangle {
-                    id: leftFrame
-                    width: parent.width/2
-                    color: "#1000ff00"
-                    anchors.left: parent.left
-                    anchors.top: rectangleWordTest.bottom
-                    anchors.bottom: parent.bottom
-                    anchors.margins: 10
-                    anchors.topMargin: 10
-
-                    ScrollView {
-                        id: scrollView
-                        anchors.fill: parent
-                        anchors.topMargin: 0
-
-                        TextArea {
-                            id: textAreaBuffer
-                            anchors.fill: parent
-                            placeholderText: qsTr("Saved words by user")
-                        }
-                    }
-                }
-
-                Rectangle {
-                    id: rightFrame
-                    color: "#1000ff00"
-                    anchors.left: leftFrame.right
-                    anchors.right: parent.right
-                    anchors.top: rectangleWordTest.bottom
-                    anchors.bottom: parent.bottom
-                    anchors.margins: 10
-                    anchors.topMargin: 10
-
-                    ScrollView {
-                        id: scrollView1
-                        anchors.fill: parent
-
-                        TextArea {
-                            id: textAreaTranslate
-                            placeholderText: qsTr("Translation of buffer place here")
-                        }
-                    }
-                }
-
-                Rectangle {
-                    id: rectangleWordTest
-                    height: 200
-                    color: "#ffffff"
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.top: parent.top
-                    anchors.rightMargin: 10
-                    anchors.leftMargin: 10
-                    anchors.topMargin: 10
-
-                    TextField {
-                        id: textField
-                        x: 9
-                        y: 8
-                        width: 152
-                        height: 22
-                        placeholderText: qsTr("Text Field")
-                    }
-
-                    ListView {
-                        id: listViewWordTest
-                        model: wordTestModel
-                        x: 8
-                        y: 40
-                        width: 153
-                        height: 160
-
-
-                        delegate: Rectangle {
-                            x: 5
-                            width: 80
-                            height: 40
-                            color: "gray"
-                            radius: 10
-
-                            MouseArea {
-                                id: choseMouseArea
-                                anchors.fill: parent
-                                onClicked: {
-
-                                }
-                            }
-
-                            Text {
-                                id: choseText
-                                anchors.fill: parent
-                                horizontalAlignment: Text.AlignHCenter
-                                verticalAlignment: Text.AlignVCenter
-                                text: modelData
-                            }
-                        }
-                    }
-                }
-
-            }
+        WordTestPage {
+            id: testPage
         }
-    }
 
-    Connections {
-        target: fileManagerContext
-
-        function onUpdateBufferSlot(str){
-            textAreaBuffer.text = str
+        WordLibraryPage {
+            id: wordPage
         }
-    }
 
-    Connections {
-        target: wordRandomizerContext
-
-        function onGetRandomWordUSi(){
-
+        SettingPage {
+            id: settingPage
         }
+
+
     }
-
-
 
 }
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+##^##*/

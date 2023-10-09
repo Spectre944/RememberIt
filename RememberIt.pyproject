@@ -1,3 +1,3 @@
 {
-    "files": ["assets/qml/components/SceButton.qml","classes/FileManager.py","assets/qml/windows/NotificationWindow.qml","main.py","assets/qml/main.qml","classes/WordManager.py","classes/WordRandomizer.py"]
+    "files": ["classes/WordRandomizer.py","classes/WordManager.py","assets/qml/windows/WordTestPage.qml","assets/qml/windows/WordLibraryPage.qml","assets/qml/windows/NotificationWindow.qml","classes/FileManager.py","assets/qml/components/SceButton.qml","main.py","assets/qml/main.qml","assets/qml/windows/SettingPage.qml"]
 }
